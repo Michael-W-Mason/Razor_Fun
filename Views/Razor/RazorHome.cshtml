@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    @{
+        string[] RazorList = new string[]
+            {
+                "Apple Pie",
+                "Burritos",
+                "Clams Casino",
+                "Donuts",
+                "Chocolate",
+            };
+    }
+    <h1>Here are some delicious foods!</h1>
+    @{
+        for (int i = 0; i < RazorList.Length; i++)
+        {
+            @if (RazorList[i].StartsWith("C"))
+            {
+                <p style="color: red;">@RazorList[i]</p>
+            }
+            else
+            {
+                <p>@RazorList[i]</p>
+            }
+        }
+    }
+</body>
+
+</html>
